@@ -15,7 +15,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("../public/ProductCategory.json"),
+        loader: async () => {
+          const categories = await fetch("/ProductCategory.json").then((res) =>
+            res.json()
+          );
+          const products = await fetch("/Products.json").then((res) =>
+            res.json()
+          );
+          return { categories, products };
+        },
       },
       {
         path: "/Statistics",

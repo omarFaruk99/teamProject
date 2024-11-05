@@ -3,12 +3,14 @@ import Gadgets from "../Gadgets/Gadgets";
 import Hero from "../Hero/Hero";
 
 const Home = () => {
-  const allCategory = useLoaderData();
+  const allCategory = useLoaderData(); //Loaded categories and products
   console.log(allCategory);
   return (
     <div>
       <Hero></Hero>
-      <Gadgets allCategory={allCategory}></Gadgets>
+      <div>
+        <Gadgets allCategory={allCategory}></Gadgets>
+      </div>
     </div>
   );
 };

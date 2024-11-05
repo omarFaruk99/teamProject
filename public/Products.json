@@ -1,0 +1,207 @@
+[
+    {
+      "product_id": "P001",
+      "product_title": "Apple iPhone 15 Pro Max",
+      "product_image": "https://i.ibb.co.com/vwHw3zw/phone.jpg",
+      "category": "Smartphones",
+      "price": 1299,
+      "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+      "specification": [
+        "6.7-inch Super Retina XDR display",
+        "A17 Bionic chip",
+        "Triple-camera system",
+        "LiDAR Scanner",
+        "Up to 2TB storage"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "P002",
+      "product_title": "Samsung Galaxy S23 Ultra",
+      "product_image": "https://i.ibb.co.com/vwHw3zw/phone.jpg",
+      "category": "Smartphones",
+      "price": 1199,
+      "description": "A powerful smartphone with the latest Samsung technology.",
+      "specification": [
+        "6.8-inch Dynamic AMOLED 2X",
+        "Snapdragon 8 Gen 2",
+        "200MP Quad Camera",
+        "5000mAh Battery",
+        "1TB Storage Option"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "P003",
+      "product_title": "Google Pixel 7 Pro",
+      "product_image": "https://i.ibb.co.com/vwHw3zw/phone.jpg",
+      "category": "Smartphones",
+      "price": 899,
+      "description": "Google's flagship phone with advanced AI and camera capabilities.",
+      "specification": [
+        "6.7-inch LTPO OLED display",
+        "Google Tensor G2 Chip",
+        "Triple-camera system",
+        "5000mAh Battery",
+        "Up to 512GB Storage"
+      ],
+      "availability": false,
+      "rating": 4.6
+    },
+    {
+      "product_id": "P004",
+      "product_title": "OnePlus 11",
+      "product_image": "https://i.ibb.co.com/vwHw3zw/phone.jpg",
+      "category": "Smartphones",
+      "price": 749,
+      "description": "A powerful phone with fast charging and excellent performance.",
+      "specification": [
+        "6.7-inch AMOLED display",
+        "Snapdragon 8 Gen 2",
+        "Triple-camera system",
+        "5000mAh Battery",
+        "256GB Storage"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "P005",
+      "product_title": "Xiaomi Mi 13 Pro",
+      "product_image": "https://i.ibb.co.com/vwHw3zw/phone.jpg",
+      "category": "Smartphones",
+      "price": 799,
+      "description": "High-performance smartphone with impressive camera capabilities.",
+      "specification": [
+        "6.73-inch AMOLED display",
+        "Snapdragon 8 Gen 2",
+        "50MP Triple-camera system",
+        "4820mAh Battery",
+        "Up to 512GB Storage"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "P006",
+      "product_title": "Sony Xperia 1 IV",
+      "product_image": "https://i.ibb.co.com/vwHw3zw/phone.jpg",
+      "category": "Smartphones",
+      "price": 1099,
+      "description": "Flagship smartphone with 4K display and advanced camera technology.",
+      "specification": [
+        "6.5-inch 4K HDR OLED display",
+        "Snapdragon 8 Gen 1",
+        "Triple-camera system",
+        "5000mAh Battery",
+        "512GB Storage"
+      ],
+      "availability": false,
+      "rating": 4.3
+    },
+    {
+      "product_id": "P007",
+      "product_title": "MacBook Pro 14",
+      "product_image": "https://i.ibb.co.com/sHVqNws/laptop.jpg",
+      "category": "Laptops",
+      "price": 1999,
+      "description": "High-performance laptop with M1 Pro chip and Retina display.",
+      "specification": [
+        "14-inch Retina Display",
+        "Apple M1 Pro Chip",
+        "16GB RAM",
+        "512GB SSD",
+        "20 hours battery life"
+      ],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "P008",
+      "product_title": "Dell XPS 13",
+      "product_image": "https://i.ibb.co.com/sHVqNws/laptop.jpg",
+      "category": "Laptops",
+      "price": 999,
+      "description": "Ultra-thin and lightweight laptop with powerful performance.",
+      "specification": [
+        "13.4-inch FHD+ Display",
+        "Intel Core i7 11th Gen",
+        "16GB RAM",
+        "512GB SSD",
+        "12 hours battery life"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "P009",
+      "product_title": "HP Spectre x360",
+      "product_image": "https://i.ibb.co.com/sHVqNws/laptop.jpg",
+      "category": "Laptops",
+      "price": 1199,
+      "description": "Convertible laptop with sleek design and powerful specs.",
+      "specification": [
+        "13.3-inch 4K OLED Display",
+        "Intel Core i7 12th Gen",
+        "16GB RAM",
+        "1TB SSD",
+        "16 hours battery life"
+      ],
+      "availability": false,
+      "rating": 4.6
+    },
+    {
+      "product_id": "P010",
+      "product_title": "Sony WH-1000XM4",
+      "product_image": "https://i.ibb.co.com/642nyNc/headphone.jpg",
+      "category": "Headphones",
+      "price": 349,
+      "description": "Wireless noise-canceling headphones with exceptional sound quality.",
+      "specification": [
+        "Wireless",
+        "Active Noise Cancellation",
+        "30 Hours Battery Life",
+        "Touch Controls",
+        "Bluetooth 5.0"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "P011",
+      "product_title": "Bose QuietComfort 45",
+      "product_image": "https://i.ibb.co.com/642nyNc/headphone.jpg",
+      "category": "Headphones",
+      "price": 329,
+      "description": "Comfortable, high-quality headphones with noise cancellation.",
+      "specification": [
+        "Wireless",
+        "Active Noise Cancellation",
+        "24 Hours Battery Life",
+        "Comfortable Fit",
+        "Bluetooth 5.1"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "P012",
+      "product_title": "Sennheiser HD 560S",
+      "product_image": "https://i.ibb.co.com/642nyNc/headphone.jpg",
+      "category": "Headphones",
+      "price": 199,
+      "description": "High-fidelity headphones for audio enthusiasts.",
+      "specification": [
+        "Open-back Design",
+        "Detachable Cable",
+        "Lightweight",
+        "Natural Sound Quality",
+        "3.5mm and 6.3mm Jacks"
+      ],
+      "availability": true,
+      "rating": 4.5
+    }
+  ]
+  

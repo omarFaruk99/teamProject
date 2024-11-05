@@ -6,6 +6,7 @@ import Root from "./assets/Component/Roots/Root";
 import Home from "./assets/Component/Home/Home";
 import Statistics from "./assets/Component/Statistics/Statistics";
 import Dashboard from "./assets/Component/Dashboard/Dashboard";
+import ProductDetails from "./assets/Component/ProductsDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/Dashboard",
         element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/products/:productId",
+        element: <ProductDetails></ProductDetails>,
+        loader: () => fetch("/Products.json").then((res) => res.json()), // Loads product data for the details page
       },
     ],
   },

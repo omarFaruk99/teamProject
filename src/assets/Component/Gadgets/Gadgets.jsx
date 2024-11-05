@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Gadgets = ({ allCategory }) => {
   // Destructure categories and products
@@ -73,7 +74,11 @@ const Gadgets = ({ allCategory }) => {
                       <p>Price: ${product.price}</p>
                     </div>
                     <div>
-                        <button className="rounded-2xl border-2 border-violet-400 p-1 text-violet-600 px-2">Show details</button>
+                      <Link to={`/products/${product.product_id}`}>
+                        <button className="rounded-2xl border-2 border-violet-400 p-1 text-violet-600 px-2">
+                          Show details
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 ))

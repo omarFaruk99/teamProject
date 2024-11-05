@@ -1,10 +1,15 @@
 import { FaCartShopping } from "react-icons/fa6";
 import { FaHeartCirclePlus } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 const Navbar = () => {
+  const location = useLocation(); // Get the current location
+  const isHomePage = location.pathname === "/"; // Check if the current page is Home
+  const navbarClass = isHomePage ? "bg-violet-500" : "bg-gray-100"; // Original color for Home, pink for others
   return (
     <div>
-      <div className="flex justify-between bg-violet-500 mt-4 items-center p-5 rounded-t-xl">
+      <div
+        className={`flex justify-between ${navbarClass} mt-4 items-center p-5 rounded-t-xl`}
+      >
         <h2 className="text-xl font-semibold">Gadget Heaven</h2>
         <div className="flex space-x-5 font-semibold">
           <p>

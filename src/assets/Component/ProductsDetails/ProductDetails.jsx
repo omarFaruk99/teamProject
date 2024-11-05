@@ -71,7 +71,7 @@ const ProductDetails = () => {
                   <button className="border-2 border-violet-500 p-1 rounded-2xl px-3 bg-violet-100">
                     Add to Cart
                   </button>
-                  <div>
+                  <div className="WishList">
                     <FaHeart color="red" size={30} />
                   </div>
                 </div>

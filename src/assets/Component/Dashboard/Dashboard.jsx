@@ -1,52 +1,51 @@
-import { useState } from "react";
-import Cart from "../Cart/Cart";
-import Wishlist from "../Wishlist/Wishlist";
+import React, { useState } from "react";
+import Cart from "../Cart/Cart"; // Assuming you have a Cart component
+import Wishlist from "../Wishlist/Wishlist"; // Assuming you have a Wishlist component
 
 const Dashboard = () => {
-  const [showCart, setShowCart] = useState(false); // State to show/hide cart
-  const [showWishlist, setShowWishlist] = useState(false); // State to show/hide wishlist
+  // State to manage active view
+  const [activeView, setActiveView] = useState("cart"); // Default to "cart"
 
-  // Toggle functions
-  const toggleCart = () => {
-    setShowCart(true); // Show cart content
-    setShowWishlist(false); // Hide wishlist content if it's open
+  // Handlers to change the active view
+  const showCart = () => {
+    setActiveView("cart");
   };
 
-  const toggleWishlist = () => {
-    setShowWishlist(true); // Show wishlist content
-    setShowCart(false); // Hide cart content if it's open
+  const showWishlist = () => {
+    setActiveView("wishlist");
   };
 
   return (
-    <div>
-      <div className="bg-violet-500 text-center space-y-5 pb-40 pt-5">
-        <h2 className="text-2xl font-bold">Dashboard</h2>
-        <p>
-          Explore the latest gadgets that will take your experience to the next
-          level. From smart devices to <br /> the coolest accessories, we have
-          it all!
-        </p>
-        <div className="space-x-4">
+    <div className="flex flex-col">
+      <div className="bg-violet-500 p-6 rounded-md w-full">
+        <h2 className="text-4xl font-bold text-white mb-4 text-center">
+          Dashboard
+        </h2>
+        <div className="flex space-x-4 justify-center">
           <button
-            onClick={toggleCart}
-            className="bg-white rounded-3xl px-4 py-1"
+            onClick={showCart}
+            className={`px-4 py-2 rounded-md ${
+              activeView === "cart" ? "bg-white text-violet-500" : "bg-gray-300"
+            }`}
           >
             Cart
           </button>
           <button
-            onClick={toggleWishlist}
-            className="bg-white rounded-3xl px-4 py-1"
+            onClick={showWishlist}
+            className={`px-4 py-2 rounded-md ${
+              activeView === "wishlist"
+                ? "bg-white text-violet-500"
+                : "bg-gray-300"
+            }`}
           >
             Wishlist
           </button>
         </div>
       </div>
-      {/* Conditional Rendering for Cart and Wishlist */}
-      <div className="mt-5">
-        {showCart && <Cart></Cart>}
-        {/* Display Cart component if showCart is true */}
-        {showWishlist && <Wishlist></Wishlist>}
-        {/* Display Wishlist component if showWishlist is true */}
+
+      <div className="w-9/12 mx-auto">
+        {/* Render the active view */}
+        {activeView === "cart" ? <Cart /> : <Wishlist />}
       </div>
     </div>
   );

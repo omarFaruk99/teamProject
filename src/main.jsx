@@ -7,6 +7,8 @@ import Home from "./assets/Component/Home/Home";
 import Statistics from "./assets/Component/Statistics/Statistics";
 import Dashboard from "./assets/Component/Dashboard/Dashboard";
 import ProductDetails from "./assets/Component/ProductsDetails/ProductDetails";
+import { CartProvider } from "./assets/Component/CartContext/CartContext";
+import { WishlistProvider } from "./assets/Component/WishlistContext/WishlistContext";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,12 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <WishlistProvider>
+        {" "}
+        {/* Wrap RouterProvider with CartProvider */}
+        <RouterProvider router={router} />
+      </WishlistProvider>
+    </CartProvider>
   </StrictMode>
 );

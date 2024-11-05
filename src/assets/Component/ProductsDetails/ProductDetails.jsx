@@ -3,10 +3,14 @@
 import { useParams, useLoaderData } from "react-router-dom";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
+import { useCart } from "../CartContext/CartContext";
+import { useWishlist } from "../WishlistContext/WishlistContext";
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const products = useLoaderData(); // Gets data from the loader
+  const { addToCart } = useCart();
+  const { addToWishlist } = useWishlist(); // Access addToWishlist function
 
   const product = products.find((p) => p.product_id === productId);
 
@@ -68,12 +72,18 @@ const ProductDetails = () => {
               </div>
               <div>
                 <div className="flex items-center space-x-2 mt-2">
-                  <button className="border-2 border-violet-500 p-1 rounded-2xl px-3 bg-violet-100">
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="border-2 border-violet-500 p-1 rounded-2xl px-3 bg-violet-100"
+                  >
                     Add to Cart
                   </button>
-                  <div className="WishList">
+                  <button
+                    onClick={() => addToWishlist(product)}
+                    className="wishlist-button"
+                  >
                     <FaHeart color="red" size={30} />
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>

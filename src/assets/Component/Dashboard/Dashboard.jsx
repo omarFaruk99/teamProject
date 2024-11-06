@@ -24,18 +24,18 @@ const Dashboard = () => {
         <div className="flex space-x-4 justify-center">
           <button
             onClick={showCart}
-            className={`px-4 py-2 rounded-md ${
-              activeView === "cart" ? "bg-white text-violet-500" : "bg-gray-300"
+            className={`px-4 py-2 rounded-md font-semibold ${
+              activeView === "cart" ? "bg-gray-300" : ""
             }`}
           >
             Cart
           </button>
           <button
             onClick={showWishlist}
-            className={`px-4 py-2 rounded-md ${
+            className={`px-4 py-2 rounded-md font-semibold ${
               activeView === "wishlist"
-                ? "bg-white text-violet-500"
-                : "bg-gray-300"
+                ? "bg-gray-300"
+                : ""
             }`}
           >
             Wishlist

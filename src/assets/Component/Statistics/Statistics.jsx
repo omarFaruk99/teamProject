@@ -1,9 +1,9 @@
-
+import { FcStatistics } from "react-icons/fc";
 
 const Statistics = () => {
     return (
-        <div>
-            <h1>This is Statistics</h1>
+        <div className="flex justify-center items-center h-screen">
+            <FcStatistics size={500} />
         </div>
     );
 };

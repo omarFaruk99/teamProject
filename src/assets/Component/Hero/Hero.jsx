@@ -23,7 +23,7 @@ const Hero = () => {
           <div>
             <button
               onClick={handleShopNowClick}
-              className="bg-white rounded-2xl p-2 mb-12"
+              className="bg-gray-300 rounded-2xl p-2 mb-12"
             >
               Shop Now
             </button>

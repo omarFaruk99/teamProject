@@ -1,5 +1,4 @@
 // ProductDetails.jsx
-// import React from "react";
 import { useParams, useLoaderData } from "react-router-dom";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
@@ -7,13 +6,15 @@ import { useCart } from "../CartContext/CartContext";
 import { useWishlist } from "../WishlistContext/WishlistContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { toast } from 'react-toastify';
+import { useState } from "react";
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const products = useLoaderData(); // Gets data from the loader
   const { addToCart } = useCart();
   const { addToWishlist } = useWishlist(); // Access addToWishlist function
+
+  const [isWishlisted, setIsWishlisted] = useState(false); // Track wishlist state
 
   const product = products.find((p) => p.product_id === productId);
 
@@ -28,23 +29,18 @@ const ProductDetails = () => {
     });
   };
 
-  // Function to handle add to cart with toast notification
+  // Function to handle add to wishlist with toast notification
   const handleAddToWishlist = (product) => {
     addToWishlist(product);
     toast.info("Product added to Wishlist!", {
       position: "top-center",
       autoClose: 3000,
     });
+    setIsWishlisted(true); // Disable the wishlist button
   };
 
   return (
     <div className="p-4">
-      {/* <img src={product.product_image} alt={product.product_title} />
-      <h1 className="text-2xl font-bold">{product.product_title}</h1>
-      <p>Price: ${product.price}</p>
-      <p>{product.description}</p> */}
-
-      {/* ToastContainer for displaying toasts */}
       <ToastContainer />
 
       <div className="flex flex-col justify-center relative">
@@ -64,15 +60,14 @@ const ProductDetails = () => {
             <h2 className="font-semibold text-xl">{product.product_title}</h2>
             <p className="font-semibold mt-2">Price: ${product.price}</p>
             <p className="bg-violet-300 inline-block px-2 rounded-xl">
-              {product.availability ? "Instoke" : "Not Available"}
+              {product.availability ? "In stock" : "Not Available"}
             </p>
             <p>{product.description}</p>
             <h3 className="font-semibold mt-4">Specification:</h3>
             <ol>
-              <li>1. {product.specification[0]}</li>
-              <li>2. {product.specification[1]}</li>
-              <li>3. {product.specification[2]}</li>
-              <li>4. {product.specification[3]}</li>
+              {product.specification.map((spec, index) => (
+                <li key={index}>{index + 1}. {spec}</li>
+              ))}
             </ol>
             <div>
               <h2 className="font-semibold mt-4">
@@ -81,19 +76,10 @@ const ProductDetails = () => {
                   {product.rating}
                 </span>
               </h2>
-              <div className="flex mt-1 ">
-                <span>
-                  <MdOutlineStarPurple500 color="gold" />
-                </span>
-                <span>
-                  <MdOutlineStarPurple500 color="gold" />
-                </span>
-                <span>
-                  <MdOutlineStarPurple500 color="gold" />
-                </span>
-                <span>
-                  <MdOutlineStarPurple500 color="gold" />
-                </span>
+              <div className="flex mt-1">
+                {[...Array(4)].map((_, i) => (
+                  <MdOutlineStarPurple500 key={i} color="gold" />
+                ))}
               </div>
               <div>
                 <div className="flex items-center space-x-2 mt-2">
@@ -106,8 +92,9 @@ const ProductDetails = () => {
                   <button
                     onClick={() => handleAddToWishlist(product)}
                     className="wishlist-button"
+                    disabled={isWishlisted} // Disable button if already wishlisted
                   >
-                    <FaHeart color="red" size={30} />
+                    <FaHeart color={isWishlisted ? "grey" : "red"} size={30} />
                   </button>
                 </div>
               </div>

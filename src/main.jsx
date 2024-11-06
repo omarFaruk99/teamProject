@@ -10,6 +10,7 @@ import ProductDetails from "./assets/Component/ProductsDetails/ProductDetails";
 import { CartProvider } from "./assets/Component/CartContext/CartContext";
 import { WishlistProvider } from "./assets/Component/WishlistContext/WishlistContext";
 import ErrorPage from "./assets/Component/ErrorPage/ErrorPage";
+import Blogs from "./assets/Component/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/Dashboard",
         element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/Blogs",
+        element: <Blogs></Blogs>,
       },
       {
         path: "/products/:productId",

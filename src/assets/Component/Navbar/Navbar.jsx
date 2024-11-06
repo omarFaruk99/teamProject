@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaHeartCirclePlus } from "react-icons/fa6";
 import { NavLink, useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet";  // Import Helmet to manage document head
+import { Helmet } from "react-helmet"; // Import Helmet to manage document head
 
 const Navbar = () => {
   const location = useLocation(); // Get the current location
@@ -20,6 +20,9 @@ const Navbar = () => {
   const showDashboardPage = () => {
     setActivePage("dashboard");
   };
+  const showBlogboardPage = () => {
+    setActivePage("blogs");
+  };
 
   // Dynamically set title based on the route
   const getPageTitle = () => {
@@ -29,6 +32,8 @@ const Navbar = () => {
       return "Dashboard || Gadget Heaven"; // Title for Dashboard page
     } else if (location.pathname === "/Statistics") {
       return "Statistics || Gadget Heaven"; // Title for Statistics page
+    } else if (location.pathname === "/Blogs") {
+      return "Blogs || Gadget Heaven"; // Title for Statistics page
     }
     return "Gadget Heaven"; // Default title
   };
@@ -71,13 +76,22 @@ const Navbar = () => {
             {" "}
             <NavLink to="/Dashboard">Dashboard</NavLink>{" "}
           </p>
+          <p
+            onClick={showBlogboardPage}
+            className={`px-2 py-1 rounded-md ${
+              activePage === "blogs" ? "bg-gray-300" : ""
+            }`}
+          >
+            {" "}
+            <NavLink to="/Blogs">Blogs</NavLink>{" "}
+          </p>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 items-center">
           <div className="cart">
-            <FaCartShopping />
+            <FaCartShopping size={25} />
           </div>
           <div className="wishlist">
-            <FaHeartCirclePlus />
+            <FaHeartCirclePlus size={25} />
           </div>
         </div>
       </div>

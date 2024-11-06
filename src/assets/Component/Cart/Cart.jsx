@@ -70,15 +70,17 @@ const Cart = () => {
           key={item.product_id}
           className="flex items-center justify-between border-b p-4 bg-white mb-2 rounded-lg"
         >
-          <img
-            src={item.product_image}
-            alt={item.product_title}
-            className="w-20 h-20 rounded-md"
-          />
-          <div>
-            <h3 className="font-bold">{item.product_title}</h3>
-            <p>{item.description}</p>
-            <p className="font-semibold">Price: ${item.price}</p>
+          <div className="flex space-x-2">
+            <img
+              src={item.product_image}
+              alt={item.product_title}
+              className="w-20 h-20 rounded-md"
+            />
+            <div>
+              <h3 className="font-bold">{item.product_title}</h3>
+              <p>{item.description}</p>
+              <p className="font-semibold">Price: ${item.price}</p>
+            </div>
           </div>
           <button
             onClick={() => removeFromCart(item.product_id)}

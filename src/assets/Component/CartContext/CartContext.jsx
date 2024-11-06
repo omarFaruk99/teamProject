@@ -1,11 +1,17 @@
 // CartContext.js
 import { createContext, useContext, useState } from "react";
+import { toast } from "react-toastify";
 
 // Create context
 const CartContext = createContext();
 
+// const showToast = () => {
+//   toast.success("This is a success notification!");
+// };
+
 // Custom hook to use cart context
 export const useCart = () => {
+  // showToast();
   return useContext(CartContext);
 };
 

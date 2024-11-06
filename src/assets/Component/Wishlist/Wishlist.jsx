@@ -15,14 +15,16 @@ const Wishlist = () => {
             key={item.product_id}
             className="flex items-center justify-between border-b p-4 bg-white mb-2 rounded-lg"
           >
-            <img
-              src={item.product_image}
-              alt={item.product_title}
-              className="w-20 h-20 rounded-md"
-            />
-            <div>
-              <h3 className="font-semibold text-lg">{item.product_title}</h3>
-              <p>{item.description}</p>
+            <div className="flex space-x-2">
+              <img
+                src={item.product_image}
+                alt={item.product_title}
+                className="w-20 h-20 rounded-md"
+              />
+              <div>
+                <h3 className="font-semibold text-lg">{item.product_title}</h3>
+                <p>{item.description}</p>
+              </div>
             </div>
             <button
               onClick={() => removeFromWishlist(item.product_id)}

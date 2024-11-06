@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
 const Hero = () => {
+  const navigate = useNavigate(); // Initialize the navigate function
+
+  const handleShopNowClick = () => {
+    navigate("/Dashboard"); // Navigate to the Dashboard route
+  };
   return (
     <div>
       <div className="flex flex-col justify-center relative">
@@ -15,7 +21,12 @@ const Hero = () => {
             </p>
           </div>
           <div>
-            <button className="bg-white rounded-2xl p-2 mb-12">Shop Now</button>
+            <button
+              onClick={handleShopNowClick}
+              className="bg-white rounded-2xl p-2 mb-12"
+            >
+              Shop Now
+            </button>
           </div>
         </div>
         <div className="bannerImg -mt-64 flex justify-center">

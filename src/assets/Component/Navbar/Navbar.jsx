@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaHeartCirclePlus } from "react-icons/fa6";
 import { NavLink, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";  // Import Helmet to manage document head
+
 const Navbar = () => {
   const location = useLocation(); // Get the current location
   const isHomePage = location.pathname === "/"; // Check if the current page is Home
@@ -19,8 +21,24 @@ const Navbar = () => {
     setActivePage("dashboard");
   };
 
+  // Dynamically set title based on the route
+  const getPageTitle = () => {
+    if (location.pathname === "/") {
+      return "Home || Gadget Heaven"; // Title for Home page
+    } else if (location.pathname === "/Dashboard") {
+      return "Dashboard || Gadget Heaven"; // Title for Dashboard page
+    } else if (location.pathname === "/Statistics") {
+      return "Statistics || Gadget Heaven"; // Title for Statistics page
+    }
+    return "Gadget Heaven"; // Default title
+  };
+
   return (
     <div>
+      {/* Set the document title dynamically */}
+      <Helmet>
+        <title>{getPageTitle()}</title>
+      </Helmet>
       <div
         className={`flex justify-between ${navbarClass} mt-4 items-center p-5 rounded-t-xl`}
       >

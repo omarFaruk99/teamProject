@@ -5,6 +5,9 @@ import { MdOutlineStarPurple500 } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import { useCart } from "../CartContext/CartContext";
 import { useWishlist } from "../WishlistContext/WishlistContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import { toast } from 'react-toastify';
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -16,12 +19,34 @@ const ProductDetails = () => {
 
   if (!product) return <p>Product not found.</p>;
 
+  // Function to handle add to cart with toast notification
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    toast.success("Product added to cart!", {
+      position: "top-center",
+      autoClose: 3000,
+    });
+  };
+
+  // Function to handle add to cart with toast notification
+  const handleAddToWishlist = (product) => {
+    addToWishlist(product);
+    toast.info("Product added to Wishlist!", {
+      position: "top-center",
+      autoClose: 3000,
+    });
+  };
+
   return (
     <div className="p-4">
       {/* <img src={product.product_image} alt={product.product_title} />
       <h1 className="text-2xl font-bold">{product.product_title}</h1>
       <p>Price: ${product.price}</p>
       <p>{product.description}</p> */}
+
+      {/* ToastContainer for displaying toasts */}
+      <ToastContainer />
+
       <div className="flex flex-col justify-center relative">
         <div className="text-center bg-violet-500 pt-5 space-y-4 pb-36 rounded-xl">
           <h2 className="text-2xl font-bold">Products Details</h2>
@@ -73,13 +98,13 @@ const ProductDetails = () => {
               <div>
                 <div className="flex items-center space-x-2 mt-2">
                   <button
-                    onClick={() => addToCart(product)}
+                    onClick={() => handleAddToCart(product)}
                     className="border-2 border-violet-500 p-1 rounded-2xl px-3 bg-violet-100"
                   >
                     Add to Cart
                   </button>
                   <button
-                    onClick={() => addToWishlist(product)}
+                    onClick={() => handleAddToWishlist(product)}
                     className="wishlist-button"
                   >
                     <FaHeart color="red" size={30} />

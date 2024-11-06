@@ -8,7 +8,7 @@ const Wishlist = () => {
     <div className="p-4">
       <h2 className="text-2xl font-bold">Wishlist</h2>
       {wishlistItems.length === 0 ? (
-        <p>Your wishlist is empty.</p>
+        <p>Wishlist is empty.</p>
       ) : (
         wishlistItems.map((item) => (
           <div

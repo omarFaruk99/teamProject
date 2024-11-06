@@ -9,11 +9,13 @@ import Dashboard from "./assets/Component/Dashboard/Dashboard";
 import ProductDetails from "./assets/Component/ProductsDetails/ProductDetails";
 import { CartProvider } from "./assets/Component/CartContext/CartContext";
 import { WishlistProvider } from "./assets/Component/WishlistContext/WishlistContext";
+import ErrorPage from "./assets/Component/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

@@ -4,10 +4,15 @@ import { FaTrash } from "react-icons/fa";
 import { useCart } from "../CartContext/CartContext";
 import { ImSortAmountDesc } from "react-icons/im";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaMoneyCheckDollar } from "react-icons/fa6";
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems, removeFromCart, clearCart } = useCart();
   const [sortedItems, setSortedItems] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [purchaseTotal, setPurchaseTotal] = useState(0);
+  const navigate = useNavigate();
 
   // Initialize sortedItems with cartItems on component mount or when cartItems change
   useEffect(() => {
@@ -20,6 +25,19 @@ const Cart = () => {
   const sortByPrice = () => {
     const sorted = [...sortedItems].sort((a, b) => b.price - a.price);
     setSortedItems(sorted);
+  };
+
+  // Handle purchase action
+  const handlePurchase = () => {
+    setIsModalOpen(true); // Open the modal
+    setPurchaseTotal(totalCost); // Set the purchase total for the modal
+    clearCart(); // Clear the cart
+  };
+
+  // Close modal and redirect to home
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+    navigate("/"); // Redirect to home page
   };
 
   return (
@@ -38,7 +56,10 @@ const Cart = () => {
             </span>
           </button>
           <div>
-            <button className="bg-violet-500 px-3 rounded-lg text-white font-semibold py-1">
+            <button
+              onClick={handlePurchase}
+              className="bg-violet-500 px-3 rounded-lg text-white font-semibold py-1"
+            >
               Purchase
             </button>
           </div>
@@ -67,6 +88,30 @@ const Cart = () => {
           </button>
         </div>
       ))}
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs w-full text-center">
+            <div className="mb-4">
+              <div className="flex justify-center">
+                <FaMoneyCheckDollar size={40} color="green" />
+              </div>
+              <h2 className="text-xl font-bold">Payment Successfully</h2>
+              <p className="mt-2">
+                Thanks for purchasing.{" "}
+                <strong>Total: ${purchaseTotal.toFixed(2)}</strong>
+              </p>
+            </div>
+            <button
+              onClick={closeModal}
+              className="bg-gray-300 px-4 py-2 rounded-lg mt-4"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

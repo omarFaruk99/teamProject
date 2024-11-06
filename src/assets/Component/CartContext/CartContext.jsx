@@ -25,11 +25,17 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  // Function to clear the cart
+  const clearCart = () => {
+    setCartItems([]); // Clear the cart items
+  };
+
   // Context value
   const value = {
     cartItems,
     addToCart,
     removeFromCart,
+    clearCart, // Add clearCart to the context value
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

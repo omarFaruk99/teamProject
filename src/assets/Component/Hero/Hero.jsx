@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import bannerImg from "./banner.jpg";
 const Hero = () => {
   const navigate = useNavigate(); // Initialize the navigate function
 
@@ -32,7 +33,7 @@ const Hero = () => {
         <div className="bannerImg -mt-64 flex justify-center">
           <div className="rounded-xl border-2 border-white p-3 bg-violet-300 shadow-lg">
             <img
-              src="/src/assets/banner.jpg"
+              src={bannerImg}
               className="w-[1062px] h-[500px] rounded-xl"
               alt="Gadget Heaven Banner"
             />

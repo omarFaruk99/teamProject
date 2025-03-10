@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="text-lg rounded-md bg-red-500 font-medium text-gray-800">CompanyGitTesting</h3>
+          <h3 className="text-lg font-medium text-gray-800">Company</h3>
           <ul className="mt-4 space-y-2 text-gray-600">
             <li>About Us</li>
             <li>Careers</li>

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="bg-sky-500 py-8">
-      <div className="container bg-yellow-300 mx-auto text-center mb-8">
+      <div className="container bg-yellow-300 rounded-md mx-auto text-center mb-8">
         <h2 className="text-2xl font-semibold text-gray-800">Gadget Heaven</h2>
         <p className="text-gray-600">
           Leading the way in cutting-edge technology and innovation.

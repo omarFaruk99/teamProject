@@ -1,4 +1,4 @@
-# Project Overview
+# Project Overview(omar faruk)
 
 This project showcases a dynamic and interactive web application built using core React fundamentals. It focuses on efficient state management and smooth navigation to provide a seamless user experience.
 
